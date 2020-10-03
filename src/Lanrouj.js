@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Momookies from "./Momookies"
+import RanMoment from "./RanMoment"
 import "./Lanrouj.css";
  
 class Lanrouj extends Component {
@@ -71,11 +72,8 @@ class Lanrouj extends Component {
           </form>
 
           <div id="ranMom" style={{display:"none"}}>
-            <button 
-              onClick={this.grabRanMoment}
-            >
-              Grab A Cookie!
-            </button>
+            {<RanMoment entries={this.state.moments} 
+              isEmpty={this.state.moments.length === 0}/>}
           </div>
 
           <button onClick={this.toggleMomentList}>Peep the Cookie Jar ;) UwU</button>
