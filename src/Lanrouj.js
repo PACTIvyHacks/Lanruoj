@@ -34,18 +34,33 @@ class Lanrouj extends Component {
     e.preventDefault();
   }
 
+  toggleMomentList(){
+    var x = document.getElementById("momentList");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
   render() {
     return (
       <div className="lanroujMain">
         <div className="header">
+          
           <form onSubmit={this.addMoment}>
             <input ref={(a) => this._inputElement = a} 
                   placeholder="enter motivating moment">
             </input>
             <button type="submit">add</button>
           </form>
+
+          <button onClick={this.toggleMomentList}>Peep the Cookie Jar ;) UwU</button>
+          <div id="momentList" style={{display:"none"}}>
+            {<Momookies entries={this.state.moments}/>}
+          </div>
+
         </div>
-        <Momookies entries={this.state.moments}/>
       </div>
     );
   }

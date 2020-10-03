@@ -12,7 +12,7 @@ class Momookies extends Component {
  
     return (
       <ul className="theList">
-        <FlipMove duration={33000} easing="ease-out">
+        <FlipMove duration={200} easing="ease-out">
           {listMoments}
         </FlipMove>
       </ul>
