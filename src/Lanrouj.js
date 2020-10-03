@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Momookies from "./Momookies"
+import "./Lanrouj.css";
  
 class Lanrouj extends Component {
   constructor(props) {

@@ -1,17 +1,20 @@
 import React, { Component } from "react";
+import FlipMove from "react-flip-move"
  
 class Momookies extends Component {
     createMoments(item) {
-    return <li key={item.key}>{item.text}</li>
+      return <li key={item.key}>{item.text}</li>
   }
  
   render() {
-    var todoEntries = this.props.entries;
-    var listItems = todoEntries.map(this.createMoments);
+    var momentEntries = this.props.entries;
+    var listMoments = momentEntries.map(this.createMoments);
  
     return (
       <ul className="theList">
-          {listItems}
+        <FlipMove duration={33000} easing="ease-out">
+          {listMoments}
+        </FlipMove>
       </ul>
     );
   }
