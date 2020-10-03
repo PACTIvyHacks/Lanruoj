@@ -15,6 +15,10 @@ class Lanrouj extends Component {
 
   addMoment(e) {
     if (this._inputElement.value !== "") {
+      var x = document.getElementById("ranMom");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      }
       var newMoment = {
         text: this._inputElement.value,
         key: Date.now()
@@ -43,6 +47,17 @@ class Lanrouj extends Component {
     }
   }
 
+  grabRanMoment(){
+    return (
+      <ul className="theList">
+        <li key={Date.now()}>Fix me</li>
+      </ul>
+    );
+  }
+  emptyCookieJar(){
+
+  }
+
   render() {
     return (
       <div className="lanroujMain">
@@ -55,9 +70,24 @@ class Lanrouj extends Component {
             <button type="submit">add</button>
           </form>
 
+          <div id="ranMom" style={{display:"none"}}>
+            <button 
+              onClick={this.grabRanMoment}
+            >
+              Grab A Cookie!
+            </button>
+          </div>
+
           <button onClick={this.toggleMomentList}>Peep the Cookie Jar ;) UwU</button>
           <div id="momentList" style={{display:"none"}}>
             {<Momookies entries={this.state.moments}/>}
+          </div>
+          <div id="emptyJar" style={{display:"none"}}>
+            <button 
+              onClick={this.emptyCookieJar}
+            >
+              Grab A Cookie!
+            </button>
           </div>
 
         </div>

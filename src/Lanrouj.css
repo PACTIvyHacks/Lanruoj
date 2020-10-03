@@ -13,6 +13,11 @@
     color: #FFF;
     border: 2px solid #0066FF;
   }
+  .lanroujMain .header button:disabled {
+      border: 1px solid #999999;
+      background-color: #cccccc;
+      color: #666666;
+  }
   .lanroujMain .header button:hover {
     background-color: #003399;
     border: 2px solid #003399;
