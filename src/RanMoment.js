@@ -13,26 +13,24 @@ class RanMoment extends Component {
       }));
   }
 
-
- 
   render() {
     if(this.props.isEmpty){
       return null;
     }
     if(this.state.listMoment === null){
         return (<button onClick={() => {this.createRanMoment(this.props.entries)}}> 
-                  Grab a Cookie
+                  Grab a Cookie 🍪
                 </button>);
     }
 
     return (
       <div>
+        <button onClick={() => {this.createRanMoment(this.props.entries)}}> 
+          Grab a Cookie 🍪
+        </button>
         <ul className="theList">
           <li key={this.state.listMoment.key}>{this.state.listMoment.text}</li>
         </ul>
-        <button onClick={() => {this.createRanMoment(this.props.entries)}}> 
-          Grab a Cookie
-        </button>
       </div>
     );
   }
